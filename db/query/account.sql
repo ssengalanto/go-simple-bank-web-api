@@ -17,8 +17,8 @@ LIMIT $1
 OFFSET $2;
 
 
--- name: UpdateAccount :exec
-UPDATE accounts 
+-- name: UpdateAccount :one
+UPDATE accounts
 SET balance = $2
 WHERE id = $1
 RETURNING *;
